@@ -1,20 +1,20 @@
 name: TitaNet 
-data_dir: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/audios
-output_dir: /home/ec2-user/SageMaker/Noise_modelling/Finetuned_models/models/TitaNet
+data_dir: path/to/audios
+output_dir: 
 max_model_save: 5
 
-wandb_key: 584e51608456fd25214b6b929ce02762bfcba3a4
-wandb_proj_name: Noise_Quality_Modelling
-wandb_run_name: TitaNet_NISQA_corpus
+wandb_key: 
+wandb_proj_name: Noise_Modelling
+wandb_run_name: 
 
-pretrained_model: /home/ec2-user/SageMaker/Noise_modelling/pre_trained_model/NISQA/nisqa_mos_only.tar
+pretrained_model: nisqa_mos_only.tar
 
 
-titanet_csv_file: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs
+titanet_csv_file: path/to/mos/ratings
 
-csv_file: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs/train.csv
-csv_file_val: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs/val.csv
-csv_file_test: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs/test.csv
+csv_file: train.csv
+csv_file_val: val.csv
+csv_file_test: test.csv
 csv_con: null
 csv_deg: filepath
 csv_mos_train: mos
