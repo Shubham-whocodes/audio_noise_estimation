@@ -1,0 +1,89 @@
+name: TitaNet 
+data_dir: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/audios
+output_dir: /home/ec2-user/SageMaker/Noise_modelling/Finetuned_models/models/TitaNet
+max_model_save: 5
+
+wandb_key: 584e51608456fd25214b6b929ce02762bfcba3a4
+wandb_proj_name: Noise_Quality_Modelling
+wandb_run_name: TitaNet_NISQA_corpus
+
+pretrained_model: /home/ec2-user/SageMaker/Noise_modelling/pre_trained_model/NISQA/nisqa_mos_only.tar
+
+
+titanet_csv_file: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs
+
+csv_file: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs/train.csv
+csv_file_val: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs/val.csv
+csv_file_test: /home/ec2-user/SageMaker/Noise_modelling/dataset/NISQA_corpus/csvs/test.csv
+csv_con: null
+csv_deg: filepath
+csv_mos_train: mos
+csv_mos_val: mos
+csv_mos_test: mos 
+csv_db_train: 
+    - train
+csv_db_val:  
+    - val
+csv_db_test:  
+    - test
+
+### NISQA Training options
+tr_epochs: 30 
+tr_early_stop: 20
+tr_bs: 40 
+tr_bs_val: 40
+tr_lr: 0.001
+tr_lr_patience: 15
+tr_num_workers: 4
+tr_parallel: True
+tr_ds_to_memory: False
+tr_ds_to_memory_workers: 0
+tr_device: cuda
+tr_checkpoint: every_epoch
+tr_verbose: 2
+ms_max_segments: 1300
+ms_channel: null
+
+# Bias loss options (optional)
+tr_bias_mapping: null
+tr_bias_min_r: null
+tr_bias_anchor_db: null
+
+
+
+
+
+## Tita Net Training Parameters
+
+batch_size: 8
+num_train_epochs: 50
+gradient_accumulation_steps: 2
+learning_rate: 0.0001
+
+# Audio Config
+
+sample_rate: 16000
+n_fft: 512
+win_length: 25
+hop_length: 10
+n_mels: 32
+
+# Model Parameters
+
+n_mega_blocks: 4
+n_sub_blocks: 3
+encoder_hidden_size: 128
+encoder_output_size: 1536
+embedding_size: 1
+mega_block_kernel_size: 3
+prolog_kernel_size: 3
+epilog_kernel_size: 1
+attention_hidden_size: 128
+se_reduction: 16
+simple_pool: False
+dropout: 0.1
+
+
+
+
+
